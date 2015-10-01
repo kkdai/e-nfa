@@ -36,14 +36,18 @@ Installation and Usage
 Install
 ---------------
 
-```go
+    go get github.com/kkdai/e-nfa
 
-go get github.com/kkdai/e-nfa
 
-```
 
 Usage
 ---------------
+
+Following is sample code to implement a epsilon-NFA automata diagram as follow:
+
+![image](image/eNFA.png)
+
+
 
 ```go
 

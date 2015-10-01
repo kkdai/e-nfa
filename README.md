@@ -73,7 +73,7 @@ func main() {
 Inspired By
 =============
 
-- [NFA: Wiki](https://en.wikipedia.org/wiki/Nondeterministic_finite_automaton)
+- [ε-NFA: Wiki](https://en.wikipedia.org/wiki/Nondeterministic_finite_automaton_with_%CE%B5-moves)
 - [Coursera: Automata](https://class.coursera.org/automata-004/)
 
 Project52

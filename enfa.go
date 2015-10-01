@@ -45,11 +45,6 @@ func (d *ENFA) AddState(state int, isFinal bool) {
 	}
 }
 
-//Add new transition that will input with ε(epsilon)
-func (d *ENFA) AddEpsilonTransition(srcState int, dstStateList ...int) {
-
-}
-
 //Add new transition function into NFA
 func (d *ENFA) AddTransition(srcState int, input string, dstStateList ...int) {
 	find := false
@@ -91,6 +86,14 @@ func (d *ENFA) Input(testInput string) []int {
 		} else {
 			//dead state, remove in current state
 			//do nothing.
+		}
+
+		//Updatr epsilon input way... if exist
+		epsilonTrans := transitionInput{srcState: current}
+		if valMap, ok := d.transition[epsilonTrans]; ok {
+			for dst, _ := range valMap {
+				updateCurrentState[dst] = true
+			}
 		}
 	}
 
@@ -138,7 +141,11 @@ func (d *ENFA) PrintTransitionTable() {
 	//list all inputs
 	var inputList []string
 	for key, _ := range d.inputMap {
-		fmt.Printf("\t%s|", key)
+		if key == "" {
+			fmt.Printf("\tε|")
+		} else {
+			fmt.Printf("\t%s|", key)
+		}
 		inputList = append(inputList, key)
 	}
 

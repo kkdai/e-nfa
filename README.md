@@ -1,7 +1,7 @@
 ε-NFA: Epsilon-Nondeterministic finite automaton
 ==============
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/kkdai/e-nfa/master/LICENSE)  [![GoDoc](https://godoc.org/github.com/kkdai/e-nfa?status.svg)](https://godoc.org/github.com/kkdai/nfa)  [![Build Status](https://travis-ci.org/kkdai/e-nfa.svg?branch=master)](https://travis-ci.org/kkdai/e-nfa)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/kkdai/e-nfa/master/LICENSE)  [![GoDoc](https://godoc.org/github.com/kkdai/e-nfa?status.svg)](https://godoc.org/github.com/kkdai/e-nfa)  [![Build Status](https://travis-ci.org/kkdai/e-nfa.svg?branch=master)](https://travis-ci.org/kkdai/e-nfa)
 
 
 

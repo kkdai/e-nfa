@@ -1,9 +1,6 @@
 package enfa
 
-import (
-	"fmt"
-	"testing"
-)
+import "testing"
 
 func TestBasic(t *testing.T) {
 	nfa := NewENFA(0, false)
@@ -142,9 +139,11 @@ func TestEpsilonNFA(t *testing.T) {
 	nfa.Reset()
 
 	if !nfa.VerifyInputs([]string{"0", "1"}) {
-		for key, _ := range nfa.currentState {
-			fmt.Printf("%d|", key)
-		}
+		t.Errorf("Verify inputs is failed")
+	}
+
+	nfa.Reset()
+	if !nfa.VerifyInputs([]string{"0", "0", "0"}) {
 		t.Errorf("Verify inputs is failed")
 	}
 }

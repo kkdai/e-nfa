@@ -55,17 +55,46 @@ import (
 )
 
 func main() {
-	nfa := NewNFA(0, false)
+
+	nfa := NewENFA(0, false)
 	nfa.AddState(1, false)
-	nfa.AddState(2, true)
+	nfa.AddState(2, false)
+	nfa.AddState(3, true)
+	nfa.AddState(4, false)
+	nfa.AddState(5, false)
 
-	nfa.AddTransition(0, "a", 1, 2)
-	nfa.AddTransition(1, "b", 0, 2)
+	nfa.AddTransition(0, "1", 1)
+	nfa.AddTransition(0, "0", 4)
 
-	var inputs []string
-	inputs = append(inputs, "a")
-	inputs = append(inputs, "b")
-	fmt.Println("If input a, b will go to final?", nfa.VerifyInputs(inputs) )
+	nfa.AddTransition(1, "1", 2)
+	nfa.AddTransition(1, "", 3) //epsilon
+	nfa.AddTransition(2, "1", 3)
+	nfa.AddTransition(4, "0", 5)
+	nfa.AddTransition(4, "", 1, 2) //E -> epsilon B C
+	nfa.AddTransition(5, "0", 3)
+
+	nfa.PrintTransitionTable()
+
+	if !nfa.VerifyInputs([]string{"1"}) {
+		fmt.Printf("Verify inputs is failed")
+	}
+
+	nfa.Reset()
+
+	if !nfa.VerifyInputs([]string{"1", "1", "1"}) {
+		fmt.Printf("Verify inputs is failed")
+	}
+
+	nfa.Reset()
+
+	if !nfa.VerifyInputs([]string{"0", "1"}) {
+		fmt.Printf"Verify inputs is failed")
+	}
+
+	nfa.Reset()
+	if !nfa.VerifyInputs([]string{"0", "0", "0"}) {
+		fmt.Printf("Verify inputs is failed")
+	}
 }
 
 ```

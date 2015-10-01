@@ -9,13 +9,14 @@
 
 
 
-What is Nondeterministic finite automaton
+What is Epsilon-Nondeterministic finite automaton
 =============
 
 `ε-NFA`: Epsilon-Nondeterministic finite automaton (so call:Nondeterministic finite automaton with ε-moves)
 
+In the automata theory, a nondeterministic finite automaton with ε-moves (NFA-ε)(also known as NFA-λ) is an extension of nondeterministic finite automaton(NFA), which allows a transformation to a new state without consuming any input symbols. The transitions without consuming an input symbol are called ε-transitions or λ-transitions. In the state diagrams, they are usually labeled with the Greek letter ε or λ.
 
- (sited from [here](https://en.wikipedia.org/wiki/Nondeterministic_finite_automaton))
+(sited from [here](https://en.wikipedia.org/wiki/Nondeterministic_finite_automaton))
 
 
 Looking for DFA implement?

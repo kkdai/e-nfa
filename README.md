@@ -27,7 +27,7 @@ I also write a DFA implenent in Go here. [https://github.com/kkdai/dfa](https://
 Looking for NFA implement?
 =============
 
-I also write a NFA implenent in Go here. [https://github.com/kkdai/dfa](https://github.com/kkdai/nfa)
+I also write a NFA implenent in Go here. [https://github.com/kkdai/nfa](https://github.com/kkdai/nfa)
 
 
 Installation and Usage

@@ -75,6 +75,14 @@ func (d *ENFA) AddTransition(srcState int, input string, dstStateList ...int) {
 	d.transition[targetTrans] = dstMap
 }
 
+func (d *ENFA) CheckPathExist(src int, input string, dst int) bool {
+	retMap, _ := d.transition[transitionInput{srcState: src, input: input}]
+	if _, ok := retMap[dst]; ok {
+		return true
+	}
+	return false
+}
+
 func (d *ENFA) Input(testInput string) []int {
 	updateCurrentState := make(map[int]bool)
 	for current, _ := range d.currentState {
